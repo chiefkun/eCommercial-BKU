@@ -7,6 +7,9 @@
       body {
         background: url("bg.jpg") no-repeat fixed center bottom;
       }
+      p {
+        margin: 0;
+      }
       .wrapper {
         margin-left: 20em;
         margin-top: 8em;
@@ -14,28 +17,117 @@
       .box {
         border: dashed black 0.5em;
         border-radius: 0.5em;
-        padding-left: 2em;
+        padding: 0.5em 1em 0.5em 1em;
+        width: 25em;
+        margin: 0 0 1em 0;
       }
       .style1 {
         color: white;
         font-size: 28px;
-        text-shadow: 2px 8px 7px white;
+        text-shadow: 2px 8px 8px white;
+        font-family: "Comic Sans MS", cursive, sans-serif;
+      }
+      .style2 {
+        font-weight: bold;
+        font-size: 18px;
+        text-align: center;
+        font-family: "Comic Sans MS", cursive, sans-serif;
+      }
+
+      .style3 {
+        text-align: right;
+        color: red;
+        font-weight: bold;
+        font-size: 24px;
+        text-transform: uppercase;
+        text-shadow: 8px 8px 8px yellow;
+        font-family: Verdana, Geneva, sans-serif;
+      }
+
+      .style4 {
+        font-size: 24px;
+        letter-spacing: 24px;
+        word-spacing: 15px;
+        font-weight: lighter;
+      }
+
+      .style5 {
+        color: #bdff00;
+        font-size: 24px;
+        line-height: 10px;
+        font-family: Tahoma, Geneva, sans-serif;
+      }
+
+      .style6 {
+        margin-top: 25px;
+        color: yellow;
+        background-color: black;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 24px;
+        text-shadow: 8px 8px 8px yellow;
+        font-family: Broadway;
+      }
+
+      .style7 {
+        text-align: right;
+        font-weight: bold;
+        font-family: "Comic Sans MS", cursive, sans-serif;
+      }
+
+      .quote {
+        margin-left: -2em;
+        width: 20em;
+        height: 3.5em;
+        position: relative;
+      }
+
+      .item {
+        float: left;
+        width: 2em;
+        height: 3.5em;
+        position: relative;
+        z-index: 10;
+      }
+
+      .quote-text {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding-left: 1em;
+        font-size: 32px;
+        color: white;
+        line-height: 52px;
+        font-weight: bold;
+        font-family: "Courier New", Courier, monospace;
       }
     </style>
   </head>
   <body>
     <div class="wrapper">
-      <div class="qoute">Today's Qoute</div>
-      <div class="box">
-        <p class="style1"> a Day</p>
-        <p>without</p>
-        <p>sunshine</p>
-        <p>is like</p>
-        <p>You know</p>
-        <p>night</p>
-        <p>Steve Martin</p>
+      <div class="quote">
+        <p class="quote-text">Today's Quote</p>
+        <div class="item" style="background-color: rgba(103, 188, 120, 0.5)"></div>
+        <div class="item" style="background-color: rgba(151, 181, 157, 0.5)"></div>
+        <div class="item" style="background-color: rgba(193, 163, 93, 0.5)"></div>
+        <div class="item" style="background-color: rgba(117, 202, 36, 0.5)"></div>
+        <div class="item" style="background-color: rgba(154, 233, 43, 0.5)"></div>
+        <div class="item" style="background-color: rgba(177, 194, 100, 0.5)"></div>
+        <div class="item" style="background-color: rgba(192, 166, 71, 0.5)"></div>
+        <div class="item" style="background-color: rgba(180, 162, 86, 0.5)"></div>
+        <div class="item" style="background-color: rgba(172, 192, 61, 0.5)"></div>
+        <div class="item" style="background-color: rgba(214, 227, 145, 0.5)"></div>
       </div>
-      <a href="">and more...</a>
+      <div class="box">
+        <p class="style1"> a DAY</p>
+        <p class="style2">without</p>
+        <p class="style3">sunshine</p>
+        <p class="style4">is like</p>
+        <p class="style5">You know...</p>
+        <p class="style6">night</p>
+        <p class="style7">Steve Martin</p>
+      </div>
+      <a href="http://www.brainyquote.com/quotes/topics/topic_funny.html">and more...</a>
     </div>
   </body>
 </html>
