@@ -5,53 +5,87 @@
   <meta charset="utf-8">
 </head>
 <body>
-<h2>Please fill in the following information</h2>
-<table>
-  <tbody>
-    <tr>
-      <td>Last Name*</td>
-      <td>
-        <input type="text" name="lastname" style="display: inline">
-        <p  style="display: inline">First Name*</p>
-        <input type="text" name="firstname"  style="display: inline">
-      </td>
-    </tr>
-    <tr>
-      <td>Email*</td>
-      <td>
-        <input type="text" name="email" placeholder="example@abc.com" style="display: inline">
-        <p style="display: inline">(Each email has only one account)</p>
-        </td>
-    </tr>
-    <tr>
-      <td style="vertical-align: top;">Display name</td>
-      <td>
-        <input type="text" name="displayname">
-        <p style="margin:5px;">Only</p>
-      </td>
-    </tr>
-    <tr>
-      <td>Password*</td>
-      <td>
-        <input type="text" name="password">
-      </td>
-    </tr>
-    <tr>
-      <td style='max-width: 120px;'>Re-enter Password*</td>
-      <td>
-        <input type="text" name="repassword">
-      </td>
-    </tr>
-    <tr>
-      <td>Sex</td>
-    </tr>
-    <tr>
-      <td>Birthdate</td>
-    </tr>
-    <tr>
-      <td>Favorite Color</td>
-    </tr>
-  </tbody>
-</table>
-</body>
-</html>
+  <form id="ex2Form" action="ex2_done.html" method="post">
+    <h2>Please fill in the following information</h2>
+    <table>
+      <tbody>
+        <tr>
+          <td><label for="lastname">Last Name*</label></td>
+          <td>
+            <input type="text" id="lastname" name="lastname" style="display: inline" required>
+            <label for="firstname"  style="display: inline">First Name*</label>
+            <input type="text" id="firstname" name="firstname"  style="display: inline" required>
+          </td>
+        </tr>
+        <tr>
+          <td><label for="email">Email*</label></td>
+          <td>
+            <input type="email" id="email" name="email" placeholder="example@abc.com" style="display: inline" required>
+            <p style="display: inline">(Each email has only one account)</p>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;"><label for="displayname">Display name</label></td>
+          <td>
+            <input type="text" id="displayname" name="displayname">
+            <p style="margin:5px;">Only upper/lowercase letters and numbers. The string must also has a minimum of four characters, and maximum of ten.</p>
+          </td>
+        </tr>
+        <tr>
+          <td>Password*</td>
+          <td>
+            <input type="password" name="password" id="password" required>
+          </td>
+        </tr>
+        <tr>
+          <td style="max-width: 120px;">Re-enter Password*</td>
+          <td>
+            <input type="password" name="repassword" id="repassword" required>
+          </td>
+        </tr>
+        <tr>
+          <td>Sex</td>
+          <td>
+            <input type="radio" name="gender" value="man"> Man
+            <input type="radio" name="gender" value="woman"> Woman</td>
+          </tr>
+          <tr>
+            <td>Birthdate</td>
+            <td><input type="date" name="birthdate"></td>
+          </tr>
+          <tr>
+            <td>Favorite Color</td>
+            <td><input type="color" name="favcolor"></td>
+          </tr>
+          <tr>
+            <td><button type="button" onclick="formSubmit()">Submit</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </form>
+    <script type="text/javascript">
+      function checkDisplayName(){
+        var name = document.getElementById("displayname").value;
+        if (name == '') return true;
+        return name.match(/^[a-zA-Z0-9]{4,10}$/i);
+      }
+      function checkPws(){
+        return document.getElementById("password").value == document.getElementById("repassword").value;
+      }
+      function formSubmit(){
+        var form = document.getElementById("ex2Form");
+        if(checkDisplayName()){
+          if(checkPws()){
+            if(form.checkValidity()){
+              form.submit();
+            }
+          } else {
+            alert("Password not match!");
+          }
+        } else {
+          alert("Displayname has wrong input!");
+        }
+      }
+    </script>
+  </body>
+  </html>
