@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Lab2</title>
+  <style media="screen">
+  table{
+    border: 1px solid black;
+  }
+  table tr td{
+    border: 1px solid black;
+    width: 200px;
+    height: 200px;
+  }
+  </style>
+</head>
+<body>
+  <table style="float:left">
+    <tr>
+      <td id="tdm1" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+      <td id="tdm2" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+      <td id="tdm3" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+    </tr>
+    <tr>
+      <td id="tdm4" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+      <td id="tdm5" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+      <td id="tdm6" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+    </tr>
+    <tr>
+      <td id="tdm7" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+      <td id="tdm8" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+      <td id="tdm9" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+    </tr>
+  </table>
+  <table style="display: inline-block;margin-left:30px">
+    <tr>
+      <td id="td1"><img src="Rubik/Rubik1.JPG" id="rb1" alt="1" draggable="true" ondragstart="drag(event)"></td>
+      <td id="td2"><img src="Rubik/Rubik4.JPG" id="rb4" alt="4" draggable="true" ondragstart="drag(event)"></td>
+      <td id="td3"><img src="Rubik/Rubik8.JPG" id="rb8" alt="8" draggable="true" ondragstart="drag(event)"></td>
+      <tr>
+      </tr>
+      <td id="td4"><img src="Rubik/Rubik2.JPG" id="rb2" alt="2" draggable="true" ondragstart="drag(event)"></td>
+      <td id="td5"><img src="Rubik/Rubik5.JPG" id="rb5" alt="5" draggable="true" ondragstart="drag(event)"></td>
+      <td id="td6"><img src="Rubik/Rubik7.JPG" id="rb7" alt="7" draggable="true" ondragstart="drag(event)"></td>
+    </tr>
+    <tr>
+      <td id="td7"><img src="Rubik/Rubik3.JPG" id="rb3" alt="3" draggable="true" ondragstart="drag(event)"></td>
+      <td id="td8"><img src="Rubik/Rubik6.JPG" id="rb6" alt="6" draggable="true" ondragstart="drag(event)"></td>
+      <td id="td9"><img src="Rubik/Rubik9.JPG" id="rb9" alt="9" draggable="true" ondragstart="drag(event)"></td>
+    </tr>
+  </table>
+  <script type="text/javascript">
+  function allowDrop(ev) {
+    ev.preventDefault();
+  }
+  function drag(ev) {
+    ev.dataTransfer.setData("el", ev.target.id);
+    ev.dataTransfer.setData("parentElementel", ev.target.parentElement.id);
+  }
+  function drop(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("el");
+    var par = ev.dataTransfer.getData("parentElementel");
+
+    // Check target already has child
+    if(ev.target.hasChildNodes()){
+      document.getElementById(par).appendChild(document.getElementById(ev.target.children[0].id));
+      ev.target.appendChild(document.getElementById(data));
+    } else if(ev.target.tagName == "IMG"){ // Check target is img
+      document.getElementById(ev.target.parentElement.id).appendChild(document.getElementById(data));
+      document.getElementById(par).appendChild(document.getElementById(ev.target.id));
+    } else {
+      ev.target.appendChild(document.getElementById(data));
+    }
+  }
+  </script>
+</body>
+</html>
