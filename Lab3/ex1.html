@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Lab 3</title>
+  <style media="screen">
+  table {
+    margin: auto;
+  }
+  table tr td{
+    width: 200px;
+    text-align: center;
+  }
+  table tr:first-child td,  table tr:last-child td {
+    height: 30px;
+  }
+
+  table tr:first-child td p, table tr:last-child td p{
+    margin: 10px 0 10px 0;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  table tr:nth-child(2),  table tr:nth-child(4){
+    height: 60px;
+  }
+
+  table tr:nth-child(2) td, table tr:nth-child(4) td{
+    background-color: #f5f5f5;
+  }
+
+  table tr:nth-child(3) td, table tr:nth-child(5) td{
+    background-color: #d5d5d5;
+  }
+
+  .price:before {
+    content: '$';
+    font-size: 0.5em;
+    vertical-align: top;
+  }
+  .price:after {
+    content: '.99';
+    font-size: 0.5em;
+    vertical-align: top;
+    font-weight: bold;
+  }
+  .price {
+    font-size: 42px;
+  }
+  button {
+    background:none;
+    border:none;
+    cursor:pointer;
+  }
+  </style>
+</head>
+<body>
+  <table>
+    <tr>
+      <td style="background-color: #83c87b;  border-top-left-radius: 10px;"><p>Beginner</p></td>
+      <td style="background-color: #369cfa;"><p>Advanced</p></td>
+      <td style="background-color: #eeaa43;  border-top-right-radius: 10px;"><p>Ultimate</p></td>
+    </tr>
+    <tr>
+      <td>
+        <span class="price">2</span>
+        <span style="margin-left: -20px;">Monthly</span>
+      </td>
+      <td>
+        <span class="price">8</span>
+        <span style="margin-left: -20px;">Monthly</span>
+      </td>
+      <td>
+        <span class="price">10</span>
+        <span style="margin-left: -20px;">Monthly</span>
+      </td>
+    </tr>
+    <tr>
+      <td><p><strong>10GB</strong> Of Storage</p></td>
+      <td><p><strong>20GB</strong> Of Storage</p></td>
+      <td><p><strong>30GB</strong> Of Storage</p></td>
+    </tr>
+    <tr>
+      <td><p><strong>01</strong> Domain</p></td>
+      <td><p><strong>02</strong> Domain</p></td>
+      <td><p><strong>03</strong> Domain</p></td>
+    </tr>
+    <tr>
+      <td><p><strong>No</strong> Daily Backup</p></td>
+      <td><p><strong>No</strong> Daily Backup</p></td>
+      <td><p><strong>Weekly</strong> Backup</p></td>
+    </tr>
+    <tr>
+      <td style="background-color: #83c87b;  border-bottom-left-radius: 10px;"><button type="button"><p>Sign Up</p></button></td>
+      <td style="background-color: #369cfa;"><button type="button"><p>Sign Up</p></button></td>
+      <td style="background-color: #eeaa43;  border-bottom-right-radius: 10px;"><button type="button"><p>Sign Up</p></button></td>
+    </tr>
+  </table>
+</body>
+</html>
