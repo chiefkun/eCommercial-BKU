@@ -16,23 +16,31 @@
       }
 
       img {
-        box-shadow: 0 4px 8px 0 rgba(#000000, 0.2), 0 6px 20px 0 rgba(#000000, 0.19);
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        border: 8px solid rgb(214, 214, 214);
+        background-color: white;
+        padding: 4px;
+        transition: all 200ms ease-in;
+      }
+      .img-hover:hover {
+        transform: scale(1.5);
+        transition: all 200ms ease-in;
       }
     </style>
   </head>
   <body>
     <h1>Image Gallery</h1>
     <ul>
-      <li><img src="img/photo01.jpg" alt="01"></li>
-      <li><img src="img/photo02.jpg" alt="02"></li>
-      <li><img src="img/photo03.jpg" alt="03"></li>
-      <li><img src="img/photo04.jpg" alt="04"></li>
-      <li><img src="img/photo05.jpg" alt="05"></li>
-      <li><img src="img/photo06.jpg" alt="06"></li>
-      <li><img src="img/photo07.jpg" alt="07"></li>
-      <li><img src="img/photo08.jpg" alt="08"></li>
-      <li><img src="img/photo09.jpg" alt="09"></li>
-      <li><img src="img/photo10.jpg" alt="10"></li>
+      <li><img class="img-hover" src="img/photo01.jpg" alt="01"></li>
+      <li><img class="img-hover" src="img/photo02.jpg" alt="02"></li>
+      <li><img class="img-hover" src="img/photo03.jpg" alt="03"></li>
+      <li><img class="img-hover" src="img/photo04.jpg" alt="04"></li>
+      <li><img class="img-hover" src="img/photo05.jpg" alt="05"></li>
+      <li><img class="img-hover" src="img/photo06.jpg" alt="06"></li>
+      <li><img class="img-hover" src="img/photo07.jpg" alt="07"></li>
+      <li><img class="img-hover" src="img/photo08.jpg" alt="08"></li>
+      <li><img class="img-hover" src="img/photo09.jpg" alt="09"></li>
+      <li><img class="img-hover" src="img/photo10.jpg" alt="10"></li>
     </ul>
   </body>
 </html>

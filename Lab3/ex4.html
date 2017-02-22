@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Lab 3</title>
+    <style media="screen">
+      h1 {
+        text-align: center;
+        color: #ee3c3c;
+      }
+      ul {
+        list-style: none;
+      }
+      ul li {
+        display: inline;
+      }
+
+      img {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        border: 8px solid rgb(214, 214, 214);
+        background-color: white;
+        padding: 4px;
+        transition: all 200ms ease-in;
+      }
+      .img-hover:hover {
+        transform: scale(1.5);
+        transition: all 200ms ease-in;
+      }
+      .tab2-img {
+        display: none;
+      }
+      #tab2:hover li{
+        display: inline-block !important;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Image Gallery</h1>
+    <ul>
+      <li>
+        <ul id="tab1">
+          <li>Tab 1</li><br>
+          <li><img class="img-hover" src="img/photo01.jpg" alt="01"></li>
+          <li><img class="img-hover" src="img/photo02.jpg" alt="02"></li>
+          <li><img class="img-hover" src="img/photo03.jpg" alt="03"></li>
+          <li><img class="img-hover" src="img/photo04.jpg" alt="04"></li>
+          <li><img class="img-hover" src="img/photo05.jpg" alt="05"></li>
+          <li><img class="img-hover" src="img/photo06.jpg" alt="06"></li>
+          <li><img class="img-hover" src="img/photo07.jpg" alt="07"></li>
+          <li><img class="img-hover" src="img/photo08.jpg" alt="08"></li>
+          <li><img class="img-hover" src="img/photo09.jpg" alt="09"></li>
+          <li><img class="img-hover" src="img/photo10.jpg" alt="10"></li>
+        </ul>
+      </li>
+      <li>
+        <ul id="tab2">
+          <li>Tab 2</li><br>
+          <li class="tab2-img"><img class="img-hover" src="img/photo11.jpg" alt="11"></li>
+          <li class="tab2-img"><img class="img-hover" src="img/photo12.jpg" alt="12"></li>
+          <li class="tab2-img"><img class="img-hover" src="img/photo13.jpg" alt="13"></li>
+          <li class="tab2-img"><img class="img-hover" src="img/photo14.jpg" alt="14"></li>
+          <li class="tab2-img"><img class="img-hover" src="img/photo15.jpg" alt="15"></li>
+          <li class="tab2-img"><img class="img-hover" src="img/photo16.jpg" alt="16"></li>
+          <li class="tab2-img"><img class="img-hover" src="img/photo17.jpg" alt="17"></li>
+          <li class="tab2-img"><img class="img-hover" src="img/photo18.jpg" alt="18"></li>
+          <li class="tab2-img"><img class="img-hover" src="img/photo19.jpg" alt="19"></li>
+          <li class="tab2-img"><img class="img-hover" src="img/photo20.jpg" alt="20"></li>
+        </ul>
+      </li>
+    </ul>
+  </body>
+</html>
