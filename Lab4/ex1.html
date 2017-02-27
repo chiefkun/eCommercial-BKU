@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Lab 4</title>
+  </head>
+  <body>
+    <form class="review" action="" method="post" style="display: block;float: left;margin-right:30px">
+      <h4>Please fill in the following information</h4>
+      <table>
+        <tr>
+          <td><label for="lastname">Last Name*</label></td>
+          <td>
+            <input type="text" id="lastname" value="" required>
+            <label for="firstname">First Name*</label>
+            <input type="text" id="firstname" value="" required>
+          </td>
+        </tr>
+        <tr>
+          <td><label for="email">Email*</label></td>
+          <td><input type="email" id="email" value="" required placeholder="example@abc.com"></td>
+        </tr>
+        <tr>
+          <td><label for="address">Address</label></td>
+          <td><textarea id="address" rows="8" cols="60"></textarea></td>
+        </tr>
+        <tr>
+          <td>Sex</td>
+          <td>
+            <input type="radio" name="gender" id="sex1" value="Man" checked> Man
+            <input type="radio" name="gender" id="sex2" value="Woman"> Woman
+          </td>
+        </tr>
+        <tr>
+          <td><label for="birthdate">Birthdate</label></td>
+          <td><input type="date" id="birthdate"></td>
+        </tr>
+        <tr>
+          <td><label for="job">Job*</label></td>
+          <td>
+            <select id="job" onchange="changeJob()">
+              <option value="Student">Student</option>
+              <option value="Lecturer">Lecturer</option>
+              <option value="Other">Other</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td><label for="pay">You want to pay for*</label></td>
+          <td>
+            <select id="pay">
+              <option value="1 semester">1 semester</option>
+              <option value="1 year">1 year</option>
+              <option value="2 years" style="display: none">2 years</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td><label for="file">Picture(4x6)*</label></td>
+          <td><input type="file" id="file" value=""></td>
+        </tr>
+        <tr>
+          <td><input type="submit" id="review" value="Review" onclick="reviewF();event.preventDefault();"></td>
+        </tr>
+      </table>
+    </form>
+    <div id="result" style="border: 1px solid black;display: inline-block; padding: 20px; line-height: 30px;">
+      <h4>Here is your information after click Review</h4>
+    </div>
+    <script type="text/javascript">
+      function changeJob() {
+        if(document.getElementById('job').value == "Student") {
+          document.getElementById('pay').options[0].style.display = "block";
+          document.getElementById('pay').options[2].style.display = "none";
+          document.getElementById("pay").selectedIndex = 0;
+        } else {
+          document.getElementById('pay').options[0].style.display = "none";
+          document.getElementById('pay').options[2].style.display = "block";
+          document.getElementById("pay").selectedIndex = 1;
+        }
+      }
+      function reviewF() {
+        var lastname = document.getElementById('lastname').value;
+        if(lastname == ""){return true;}
+
+        var firstname = document.getElementById('firstname').value;
+        if(firstname == ""){return true;}
+
+        var email = document.getElementById('email').value;
+        if(email == ""){return true;}
+
+        var address = document.getElementById('address').value;
+        var sex = document.getElementById('sex1').value;
+        if(document.getElementById('sex2').checked) {sex = document.getElementById('sex2').value}
+
+        var date = document.getElementById('birthdate').value;
+        var job = document.getElementById('job').value;
+        var pay = document.getElementById('pay').value;
+        var file = document.getElementById('file').value;
+
+        document.getElementById('result').innerHTML = "<h4>Here is your information after click Review</h4>Name: " + firstname + " " + lastname
+        + "<br>Email: " + email + "<br>Address: " + address + "<br>Sex: " + sex + "<br>Birthdate: " + date
+        + "<br>Job: " + job + "<br>You want to pay for: " + pay + "<br>Your picture: " + file;
+        return false;
+      }
+    </script>
+  </body>
+</html>
