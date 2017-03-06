@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Lab 5</title>
+    <style media="screen">
+      .color {
+        width: 20px;
+        padding: 0;
+        border: none;
+        height: 20px;
+      }
+      .bs-color {
+        width: 20px;
+        height: 20px;
+        margin-right: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <p style="display: inline-block;float: left;font-size: 50px;margin: 0;color:rgb(77, 23, 54)">Design your T-shirt</p>
+    <p style="display: inline-block;float: right;font-size: 30px;margin: 0;color:rgb(32, 189, 48)">Choose your style</p>
+    <div style="clear:both"></div>
+    <div id="render" style="float:left;background: rgb(245, 235, 196) url('tshirt.png') no-repeat;background-size: cover;text-align: center;width: 60%;height: 730px;border: dashed rgb(228, 174, 81) 3px">
+      <p id="text-render" style="text-align: center;margin-top: 150px;word-wrap:break-word;font-size: 50px;word-wrap:break-word;padding-left:180px;padding-right:180px"></p>
+      <div id="pic-render" style="position: absolute;top: 350px;left: 300px;"></div>
+    </div>
+    <div id="control" style="float:left;width: 38%;height: 720px;border: dashed rgb(228, 174, 81) 3px;margin-left:1px;padding-top:10px;">
+      <div style="text-align:center">
+        <input type="button" value="Add text" onclick="clickAddText()">
+        <input type="button" value="Add picture" onclick="clickAddPic()">
+      </div>
+      <div id="add-text" style="margin-left:50px;display:none">
+        <textarea name="name" id="add-text-content" style="width:90%;height:80px;resize:none;"></textarea><br>
+        <input type="button" id="add-text-btn" value="OK" style="margin-right: 40px;width: 100px;float:right" onclick="renderText()">
+        <div style="clear:both"></div>
+        <p>Basic color</p>
+        <div style="margin-left:10px">
+          <button class="bs-color" type="button" value="#FF0000" style="background: red" onclick="bsColor(this);"></button>
+          <button class="bs-color" type="button" value="#FFA500" style="background: orange" onclick="bsColor(this);"></button>
+          <button class="bs-color" type="button" value="#FFFF00" style="background: yellow" onclick="bsColor(this);"></button>
+          <button class="bs-color" type="button" value="#008000" style="background: green" onclick="bsColor(this);"></button>
+          <button class="bs-color" type="button" value="#0000FF" style="background: blue" onclick="bsColor(this);"></button>
+          <button class="bs-color" type="button" value="#808080" style="background: grey" onclick="bsColor(this);"></button>
+          <button class="bs-color" type="button" value="#FFC0CB" style="background: pink" onclick="bsColor(this);"></button>
+        </div>
+        <p>And more...</p>
+        <input style="margin-left:10px" type="color" name="" value="" onchange="bsColor(this);">
+      </div>
+      <div id="add-pic" style="margin-left:50px;display:none">
+        <p>Choose a file:</p>
+        <input type="file" value="" style="margin-left:10px" id="add-pic-content"><br>
+        <input type="button" id="add-pic-btn" value="OK" style="margin-right: 40px;width: 100px;float:right" onclick="renderPic()">
+        <div style="clear:both"></div>
+        <label for="top">Top:</label>
+        <input type="text" id="top" value="" placeholder="0" style="width: 30px;" onkeyup="changeTop(this)">px<br>
+        <label for="left">Left:</label>
+        <input type="text" id="left" value="" placeholder="0" style="width: 30px;" onkeyup="changeLeft(this)">px<br>
+      </div>
+    </div>
+    <script type="text/javascript">
+      var text = null;
+      var pic = null;
+      function clickAddText() {
+        var addT = document.getElementById("add-text");
+        if(addT.style.display == "none") {
+          addT.style.display = "block"
+        } else {
+          addT.style.display = "none"
+        }
+      }
+      function clickAddPic() {
+        var addP = document.getElementById("add-pic");
+        if(addP.style.display == "none") {
+          addP.style.display = "block"
+        } else {
+          addP.style.display = "none"
+        }
+      }
+      function renderText() {
+        text = document.getElementById("add-text-content").value;
+        if(text == ""){
+          text = null;
+          return;
+        }
+        document.getElementById("text-render").innerHTML = text;
+      }
+      function bsColor(data) {
+        if(text) {
+          document.getElementById("text-render").style.color = data.value;
+        }
+      }
+      function renderPic() {
+        pic = document.getElementById("add-pic-content").value;
+        if(pic == "") {
+          pic = null;
+          return;
+        }
+        document.getElementById("pic-render").innerHTML = "<img src='"+pic+"' alt='pic' draggable='false'>"
+      }
+      function changeTop(data) {
+        var top = data.value;
+        if(top == parseInt(top)) {
+          top = parseInt(top) + 350;
+          document.getElementById("pic-render").style.top = top + 'px';
+        } else {
+          document.getElementById("pic-render").style.top = "350px";
+        }
+      }
+      function changeLeft(data) {
+        var left = data.value;
+        if(left == parseInt(left)) {
+          left = parseInt(left) + 300;
+          document.getElementById("pic-render").style.left = left + 'px';
+        } else {
+          document.getElementById("pic-render").style.left = "300px";
+        }
+      }
+    </script>
+  </body>
+</html>

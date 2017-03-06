@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Lab 5</title>
+    <style media="screen">
+      body {
+        background: url('ex4_bg.png') no-repeat center center fixed;
+        background-size: cover;
+        text-align: left;
+        padding-top: 25px;
+        padding-left: 260px;
+      }
+      .title {
+        font-weight: bold;
+        font-size: 36px;
+        color: rgb(133, 46, 164);
+      }
+      .label {
+        display: inline-block;
+        font-size: 24px;
+        color: rgb(133, 46, 164);
+      }
+    </style>
+  </head>
+  <body>
+    <p class="title">Do you miss anything?</p>
+    <input type="text" id="new-task" value="" placeholder="My task" style="height: 30px;width: 500px;">
+    <div id="task"></div>
+    <p class="title" id="task-remain">Remaining task: 0</p>
+    <script>
+      var count = 0;
+      var task = 0;
+      document.getElementById("new-task").addEventListener("keyup", (event) => {
+        event.preventDefault();
+        if (event.keyCode == 13) {
+          createNewTask();
+        }
+      });
+
+      function createNewTask() {
+        count ++;
+        task++;
+        document.getElementById("task").innerHTML += '<input type="checkbox" onchange="changeStatus(this)" value="'+count+'"><p class="label" id="'+count+'">'+document.getElementById("new-task").value+'</p><br>';
+        document.getElementById("task-remain").innerHTML = "Remaining task: " + task;
+      }
+
+      function changeStatus(box) {
+        if(box.checked) {
+          task--;
+          document.getElementById(box.value).style.textDecoration = "line-through";
+        } else {
+          task++;
+          document.getElementById(box.value).style.textDecoration = "none";
+        }
+        document.getElementById("task-remain").innerHTML = "Remaining task: " + task;
+      }
+    </script>
+  </body>
+</html>
