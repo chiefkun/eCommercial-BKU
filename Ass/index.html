@@ -7,135 +7,8 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Open+Sans+Condensed:300" rel="stylesheet">
-    <style media="screen">
-      .row {
-        margin: 0;
-      }
-      #header div  {
-        background-color: #222222;
-        height: 50px;
-        line-height: 50px;
-      }
-      #hd-menu ul li, #hd-menu ul{
-        list-style: none;
-        display: inline;
-      }
-      #hd-menu ul li a, #hd-logo a,
-      .side-grid-cover-title a, .side-grid-sidebar-more a{
-        text-decoration: none;
-      }
-      #hd-menu ul li a, #hd-menu ul li a:visited {
-        font-size: 25px;
-        font-family: 'Open Sans Condensed', sans-serif;
-        color: #b29600;
-      }
-      #hd-menu-search {
-        display: inline-block;
-      }
-      #hd-menu-search input[type="text"]{
-        height: 30px;
-        padding-left: 10px;
-        width: 400px;
-      }
-      #hd-menu-search > button {
-        height: 32px;
-        margin-left: -40px;
-        background: none;
-      }
-      #hd-menu-action li {
-        margin-left: 20px;
-      }
-      #hd-menu ul:nth-child(1) li {
-        margin-right: 20px;
-      }
-      #hd-logo a, #hd-logo a:visited {
-        color: #ccac00;
-        font-family: 'Abril Fatface', cursive;
-        font-size: 40px;
-      }
-      .side-grid-cover-title a, .side-grid-cover-title a:visited {
-        font-size: 50px;
-        font-family: 'Open Sans Condensed', sans-serif;
-        color: #b29600;
-      }
-      #hd-logo a:hover, #hd-menu ul li a:hover,
-      .side-grid-cover-title a:hover {
-        color: #ffd700
-      }
-      #side-grid .row > div{
-        height: 510px;
-        padding: 0;
-      }
-      #side-grid .row div:nth-of-type(3) div{
-        height: 170px;
-      }
-      #side-grid .row > div:nth-child(2) {
-        border: 3px solid white;
-      }
-      .side-grid-cover {
-        width: 100%;
-        height: 100%;
-        background-size:cover;
-        transition: 0.8s
-      }
-      .side-grid-cover:hover {
-        transform: scale(1.2);
-        transition: 0.8s
-      }
-      .side-grid-cover-title {
-        position: absolute;
-        padding-left: 20px;
-        padding-right: 30px;
-        width: 100%;
-        height: 140px;
-        background: rgba(53, 49, 23, 0.82);
-        bottom: 0;
-        transition: 0.8s
-      }
-      .side-grid-cover-title:hover {
-        height: 220px;
-        transition: 0.8s
-      }
-      .side-grid-cover-title a {
-        width: 100%;
-      }
-      .side-grid-cover-title p, .side-grid-sidebar-more a {
-        color: #ccac00;
-        font-family: 'Open Sans Condensed', sans-serif;
-        font-size: 40px;
-      }
-      .side-grid-cover-more p a{
-        font-size: 30px;
-      }
-      .side-grid-cover-more p:nth-of-type(2) {
-        margin-left: 40px;
-      }
-      .side-grid-sidebar {
-        transition: 0.8s;
-        border: 3px solid white;
-        line-height: 170px;
-        text-align: center;
-      }
-      .side-grid-sidebar-more {
-        display: none;
-        width:100%;
-        height:100%;
-        background: rgba(255, 255, 255, 0.6);
-        transition: 0.8s;
-      }
-      .side-grid-sidebar-more a {
-        background: #535147;
-        border: none;
-        border-radius: 7px;
-        padding-left: 10px;
-        padding-right: 10px;
-        font-size: 30px;
-      }
-      .side-grid-sidebar:hover > .side-grid-sidebar-more {
-        display: block;
-        transition: 0.8s;
-      }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
   </head>
   <body>
     <header id="header">
@@ -164,59 +37,77 @@
       <div class="row">
         <div class="col-md-1"></div>
         <div class="col-md-6" style="overflow: hidden;">
-          <div class="side-grid-cover" style="background:url('assets/img/watch1.jpg') no-repeat center;"></div>
-          <div class="side-grid-cover-title">
-            <a href="#" class="pull-left">Citizen Limit Edition</a>
-            <p class="prices pull-left">100.000$</p>
-            <p class="pull-right" id="demo"></p>
-            <div class="clearfix"></div>
-            <div class="side-grid-cover-more">
-              <p class="pull-left"><a href="#" title="Best Deal"><i class="fa fa-trophy fa-1" aria-hidden="true"></i> Thong Huynh</a></p>
-              <p class="pull-left" title="Count"><i class="fa fa-bar-chart fa-1" aria-hidden="true"></i> 69</p>
-              <p class="pull-right"><a href="#" title="Owner"><i class="fa fa-user-circle  fa-1" aria-hidden="true"></i> Thanh Nguyen</a></p>
+          <div class="side-grid-content" id="side-grid-1">
+            <div class="side-grid-cover" style="background:url('assets/img/watch1.jpg') no-repeat center;"></div>
+            <div class="side-grid-cover-title">
+              <a href="#" class="pull-left">Citizen Limit Edition</a>
+              <p class="prices pull-left">100.000$</p>
+              <p class="pull-right" id="side-grid-time-1"></p>
               <div class="clearfix"></div>
+              <div class="side-grid-cover-more">
+                <p class="pull-left"><a href="#" title="Best Deal"><i class="fa fa-trophy fa-1" aria-hidden="true"></i> Thong Huynh</a></p>
+                <p class="pull-left" title="Count"><i class="fa fa-bar-chart fa-1" aria-hidden="true"></i> 69</p>
+                <p class="pull-right"><a href="#" title="Owner"><i class="fa fa-user-circle  fa-1" aria-hidden="true"></i> Thanh Nguyen</a></p>
+                <div class="clearfix"></div>
+              </div>
+            </div>
+          </div>
+          <div class="side-grid-content" id="side-grid-2">
+            <div class="side-grid-cover" style="background:url('assets/img/watch2.jpg') no-repeat center;"></div>
+            <div class="side-grid-cover-title">
+              <a href="#" class="pull-left">Citizen K2K Legend</a>
+              <p class="prices pull-left">190.000$</p>
+              <p class="pull-right" id="side-grid-time-2"></p>
+              <div class="clearfix"></div>
+              <div class="side-grid-cover-more">
+                <p class="pull-left"><a href="#" title="Best Deal"><i class="fa fa-trophy fa-1" aria-hidden="true"></i> Thong Huynh</a></p>
+                <p class="pull-left" title="Count"><i class="fa fa-bar-chart fa-1" aria-hidden="true"></i> 956</p>
+                <p class="pull-right"><a href="#" title="Owner"><i class="fa fa-user-circle  fa-1" aria-hidden="true"></i> Thanh Nguyen</a></p>
+                <div class="clearfix"></div>
+              </div>
+            </div>
+          </div>
+          <div class="side-grid-content" id="side-grid-3">
+            <div class="side-grid-cover" style="background:url('assets/img/watch3.jpg') no-repeat center;"></div>
+            <div class="side-grid-cover-title">
+              <a href="#" class="pull-left">Citizen Sunrise</a>
+              <p class="prices pull-left">999.000$</p>
+              <p class="pull-right" id="side-grid-time-3"></p>
+              <div class="clearfix"></div>
+              <div class="side-grid-cover-more">
+                <p class="pull-left"><a href="#" title="Best Deal"><i class="fa fa-trophy fa-1" aria-hidden="true"></i> Thong Huynh</a></p>
+                <p class="pull-left" title="Count"><i class="fa fa-bar-chart fa-1" aria-hidden="true"></i> 5313</p>
+                <p class="pull-right"><a href="#" title="Owner"><i class="fa fa-user-circle  fa-1" aria-hidden="true"></i> Thanh Nguyen</a></p>
+                <div class="clearfix"></div>
+              </div>
             </div>
           </div>
         </div>
         <div class="col-md-4">
-          <div class="row side-grid-sidebar" style="background:url('assets/img/watch1.jpg') center;"><div class="side-grid-sidebar-more"><a href="#">More Detail</a></div></div>
-          <div class="row side-grid-sidebar" style="background:url('assets/img/watch2.jpg') center;"><div class="side-grid-sidebar-more"><a href="#">More Detail</a></div></div>
-          <div class="row side-grid-sidebar" style="background:url('assets/img/watch3.jpg') center;"><div class="side-grid-sidebar-more"><a href="#">More Detail</a></div></div>
+          <div class="row side-grid-sidebar" style="background:url('assets/img/watch1.jpg') center;"><div class="side-grid-sidebar-more" id="side-grid-sidebar-1"><a href="#">More Detail</a></div></div>
+          <div class="row side-grid-sidebar" style="background:url('assets/img/watch2.jpg') center;"><div class="side-grid-sidebar-more" id="side-grid-sidebar-2"><a href="#">More Detail</a></div></div>
+          <div class="row side-grid-sidebar" style="background:url('assets/img/watch3.jpg') center;"><div class="side-grid-sidebar-more" id="side-grid-sidebar-3"><a href="#">More Detail</a></div></div>
         </div>
         <div class="col-md-1"></div>
       </div>
     </div>
-    <div class="container-fluid" id="">
+    <div class="container-fluid">
+      <div class="row" style="height:500px;">
+        <div class="col-md-2" id="sidebar-menu">
+          <ul>
+            <li>
+              Menu
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
+    <script type="text/javascript" src="js/myJS.js"></script>
     <script>
       // Set the date we're counting down to
-      var countDownDate = new Date("Jan 5, 2018 15:37:25").getTime();
-
-      // Update the count down every 1 second
-      var x = setInterval(function() {
-
-        // Get todays date and time
-        var now = new Date().getTime();
-
-        // Find the distance between now an the count down date
-        var distance = countDownDate - now;
-
-        // Time calculations for days, hours, minutes and seconds
-        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-        // Display the result in the element with id="demo"
-        document.getElementById("demo").innerHTML = days + "d " + hours + "h "
-        + minutes + "m " + seconds + "s ";
-
-        // If the count down is finished, write some text
-        if (distance < 0) {
-          clearInterval(x);
-          document.getElementById("demo").innerHTML = "EXPIRED";
-        }
-      }, 1000);
+      setTimeCounter(new Date("Mar 9, 2017 15:37:25").getTime(), "side-grid-time-1");
+      setTimeCounter(new Date("Mar 25, 2017 15:37:25").getTime(), "side-grid-time-2");
+      setTimeCounter(new Date("Apr 9, 2017 15:37:25").getTime(), "side-grid-time-3");
     </script>
   </body>
 </html>
