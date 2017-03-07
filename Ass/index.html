@@ -21,13 +21,26 @@
         display: inline;
       }
       #hd-menu ul li a, #hd-logo a,
-      .side-grid-cover-title a {
+      .side-grid-cover-title a, .side-grid-sidebar-more a{
         text-decoration: none;
       }
       #hd-menu ul li a, #hd-menu ul li a:visited {
         font-size: 25px;
         font-family: 'Open Sans Condensed', sans-serif;
         color: #b29600;
+      }
+      #hd-menu-search {
+        display: inline-block;
+      }
+      #hd-menu-search input[type="text"]{
+        height: 30px;
+        padding-left: 10px;
+        width: 400px;
+      }
+      #hd-menu-search > button {
+        height: 32px;
+        margin-left: -40px;
+        background: none;
       }
       #hd-menu-action li {
         margin-left: 20px;
@@ -56,9 +69,9 @@
       #side-grid .row div:nth-of-type(3) div{
         height: 170px;
       }
-      /*#side-grid .row div:nth-of-type(2) {
+      #side-grid .row > div:nth-child(2) {
         border: 3px solid white;
-      }*/
+      }
       .side-grid-cover {
         width: 100%;
         height: 100%;
@@ -86,7 +99,7 @@
       .side-grid-cover-title a {
         width: 100%;
       }
-      .side-grid-cover-title p {
+      .side-grid-cover-title p, .side-grid-sidebar-more a {
         color: #ccac00;
         font-family: 'Open Sans Condensed', sans-serif;
         font-size: 40px;
@@ -98,11 +111,29 @@
         margin-left: 40px;
       }
       .side-grid-sidebar {
-        transition: 0.8s
+        transition: 0.8s;
+        border: 3px solid white;
+        line-height: 170px;
+        text-align: center;
       }
-      .side-grid-sidebar:hover {
-        opacity: 0.5;
-        transition: 0.8s
+      .side-grid-sidebar-more {
+        display: none;
+        width:100%;
+        height:100%;
+        background: rgba(255, 255, 255, 0.6);
+        transition: 0.8s;
+      }
+      .side-grid-sidebar-more a {
+        background: #535147;
+        border: none;
+        border-radius: 7px;
+        padding-left: 10px;
+        padding-right: 10px;
+        font-size: 30px;
+      }
+      .side-grid-sidebar:hover > .side-grid-sidebar-more {
+        display: block;
+        transition: 0.8s;
       }
     </style>
   </head>
@@ -117,6 +148,10 @@
             <li><a href="#">Menu 1</a></li>
             <li><a href="#">Menu 2</a></li>
           </ul>
+          <div id="hd-menu-search">
+            <input type="text" name="" value="" placeholder="Search for deal...">
+            <button type="button" class="btn fa fa-search fa-1"></button>
+          </div>
           <ul id="hd-menu-action" class="pull-right">
             <li><a href="#"><i class="fa fa-user fa-lg" aria-hidden="true"></i> Sign Up</a></li>
             <li><a href="#"><i class="fa fa-sign-in fa-lg" aria-hidden="true"></i> Login</a></li>
@@ -144,9 +179,9 @@
           </div>
         </div>
         <div class="col-md-4">
-          <div class="row side-grid-sidebar" style="background:url('assets/img/watch1.jpg') center;border: 3px solid white;"></div>
-          <div class="row side-grid-sidebar" style="background:url('assets/img/watch2.jpg') center;border: 3px solid white;"></div>
-          <div class="row side-grid-sidebar" style="background:url('assets/img/watch3.jpg') center;border: 3px solid white;"></div>
+          <div class="row side-grid-sidebar" style="background:url('assets/img/watch1.jpg') center;"><div class="side-grid-sidebar-more"><a href="#">More Detail</a></div></div>
+          <div class="row side-grid-sidebar" style="background:url('assets/img/watch2.jpg') center;"><div class="side-grid-sidebar-more"><a href="#">More Detail</a></div></div>
+          <div class="row side-grid-sidebar" style="background:url('assets/img/watch3.jpg') center;"><div class="side-grid-sidebar-more"><a href="#">More Detail</a></div></div>
         </div>
         <div class="col-md-1"></div>
       </div>
